@@ -1,0 +1,18 @@
+#include<stdio.h>
+int main()
+{
+	char *frame = "{## msg_cmd status}" ;
+	char *str_tok, *str_rest = frame;
+
+	str_tok = strtok_r(str_rest, " ", &str_rest); // should this be strtok_r()
+	printf("str_tok:%s\n",str_tok);
+	printf("str_rest:%s\n",str_rest);
+	str_tok = strtok_r(str_rest, " ", &str_rest);
+	printf("str_tok:%s\n",str_tok);
+	printf("str_rest:%s\n",str_rest);
+	str_tok = strtok_r(str_rest, "}", &str_rest);
+	printf("str_tok:%s\n",str_tok);
+	printf("str_rest:%s\n",str_rest);
+
+	return 0;
+}
